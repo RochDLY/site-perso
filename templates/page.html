@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="${lang}" xml:lang="${lang}">
+    <head>
+        ${partials/head.html()}
+    </head>
+    <body>
+        ${partials/header.html()}
+        <div class="side-page" id="contentIframe">
+        </div>
+            <div class="container">
+${if(title)}
+                <header class="header-bloc">
+                    <h1>${title}</h1>
+<!-- ${if(subtitle)}
+                    <h2>${subtitle}</h2>
+${endif} -->
+${if(date)}
+                    <time>${date}</time>
+${endif}
+<!-- ${if(author)}
+                    <p>${author}</p>
+${endif} -->
+                </header>
+${endif}
+${if(body)}
+                <div class="content">
+${body}
+${if(refs)}
+                <h2>Références</h2>
+${refs}
+${endif}
+            </div>
+${endif}
+        </div>
+${partials/footer.html()}
+        <script src="/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<meta charset="utf-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<title>${site-title} | ${if(pagetitle)}${pagetitle}${endif}</title>
+
+${if(author)}
+<meta name="author" content="${author}" />
+${endif}
+
+${if(description-meta)}
+<meta name="description" content="${description-meta}" />
+${endif}
+
+${if(date)}
+<meta name="dcterms.date" content="${date-meta}" />
+${endif}
+
+<meta name="generator" content="Pandoc, GNU make" />
+<!-- pandoc - https://pandoc.org/ -->
+<!-- gnu make - https://www.gnu.org/software/make/ -->
+<link rel="stylesheet" href="/css/styles.css" />

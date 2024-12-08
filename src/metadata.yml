@@ -1,0 +1,20 @@
+# Fichier de configuration du site web.
+# Contient les métadonnées générales.
+
+site-title: "Roch Delannay"
+
+site-subtitle: ""
+
+description: "Site web personnel de Roch Delannay"
+
+lang: "fr"
+
+author: "Roch Delannay"
+
+resume : |
+  Roch Delannay est doctorant en sciences de l'information et de la communication à l’université de Paris-Nanterre et en littératures et langues du monde, option humanités numériques, à l’université de Montréal. Sous la direction de Marta Severo, Marcello Vitali-Rosati et Emmanuel Château-Dutier, il mène sa recherche au croisement de la théorie des médias et des sciences de l’information et de la communication sur les environnements d'écriture numériques et la production du sens.
+
+rights: |
+  Sauf mention contraire, les contenus publiés sur ce site sont réutilisables suivant les termes de la licence Creative Commons Attribution 4.0 International (CC BY), cf. [résumé](https://creativecommons.org/licenses/by/4.0/deed.fr) et [texte intégral](https://creativecommons.org/licenses/by/4.0/legalcode.fr).
+
+rights-short : "CC BY 4.0"
