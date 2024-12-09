@@ -20,7 +20,7 @@ La police pour les titres est [Bagnard](https://github.com/sebsan/Bagnard), dist
 J'aimerais remercier tout particulièrement [Louis-Olivier Brassard](https://www.lobrassard.net/), pour toutes les explications sur le fonctionnement de Make et pour les bouts de code que je t'ai emprunté.
 Merci également à [Arthur Perret](https://www.arthurperret.fr/) pour ton idée de combiner Make et Pandoc (d'ailleurs ce générateur de carnet est un _fork_ de ton projet).
 
-Pour toutes les idées partagées, les échanges sur les questions qui animent ce carnet et les différentes inspirations, je remercie également les personnes suivantes :
+Pour toutes les idées partagées, je remercie également les personnes suivantes :
 
 - [Robert Alessi](http://www1.robertalessi.net:86/fr)
 - [Emmanuel Château-Dutier](https://histart.umontreal.ca/repertoire-departement/professeur/in/in22423/sg/Emmanuel%20Ch%C3%A2teau-Dutier/)
