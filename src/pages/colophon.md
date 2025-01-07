@@ -10,10 +10,20 @@ Sauf mention contraire, les contenus publiés sur ce site sont réutilisables su
 **Briques technologiques**
 
 Ce site est principalement créé avec [GNU Make 4.3](https://www.gnu.org/software/make/) et [Pandoc 3.1.1](https://pandoc.org/).
-C'est un site dit « statique ». Il ne requiert que des fichiers au format HTML pour contenir les données affichées sur les pages web.
+C'est un site dit « statique ». Il ne requiert que des fichiers au format HTML pour contenir les données affichées sur les pages web. (C'est un peu moins vrai depuis la modification de la page publications et communications en dynamique.)
 
 La composition des corps de texte est réalisée avec [Tex Gyre Heros](https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros), distribuée par GUST sous licence GPL (GUST Font License), une licence libre équivalente à LPPL (LaTeX Project Public License).
 La police pour les titres est [Bagnard](https://github.com/sebsan/Bagnard), distribuée sous licence [SIL Open Font License v1.1](https://openfontlicense.org/) et réalisée par Sebastien Sanfilippo (Love Letters).
+
+La page [Publications & Communications](http://rochdelannay.net/pages/publications.html) est construite avec deux librairies JavaScript : 
+
+- [W2UI](https://www.w2ui.com/web/home) pour générer la grille de données dans la page des publications
+- [Leaflet](https://leafletjs.com/) pour générer la carte interactive à partir d'une carte issue d'[OpenStreetMap](https://www.openstreetmap.org/) de la page des communications
+
+
+Les données sont directement récupérées et triées depuis l'[API Zotero](https://api.zotero.org/groups/5813957/items).
+
+Je remercie Louis-Olivier Brassard et Marcello Vitali-Rosati pour la réalisation du code de cette page puisque, initialement, il s'agit du code que nous avions développé pour le projet Alfred DesRochers en 2022/2023 (projet porté par Stéphanie Bernier à l'UdeM).
 
 **Remerciements**
 

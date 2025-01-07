@@ -38,8 +38,15 @@
 <p><strong>Licence</strong></p>
 <p>Sauf mention contraire, les contenus publiés sur ce site sont réutilisables suivant les termes de la licence Creative Commons Attribution 4.0 International (CC BY), cf. <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">résumé</a> et <a href="https://creativecommons.org/licenses/by/4.0/legalcode.fr">texte intégral</a>.</p>
 <p><strong>Briques technologiques</strong></p>
-<p>Ce site est principalement créé avec <a href="https://www.gnu.org/software/make/">GNU Make 4.3</a> et <a href="https://pandoc.org/">Pandoc 3.1.1</a>. C’est un site dit « statique ». Il ne requiert que des fichiers au format HTML pour contenir les données affichées sur les pages web.</p>
+<p>Ce site est principalement créé avec <a href="https://www.gnu.org/software/make/">GNU Make 4.3</a> et <a href="https://pandoc.org/">Pandoc 3.1.1</a>. C’est un site dit « statique ». Il ne requiert que des fichiers au format HTML pour contenir les données affichées sur les pages web. (C’est un peu moins vrai depuis la modification de la page publications et communications en dynamique.)</p>
 <p>La composition des corps de texte est réalisée avec <a href="https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros">Tex Gyre Heros</a>, distribuée par GUST sous licence GPL (GUST Font License), une licence libre équivalente à LPPL (LaTeX Project Public License). La police pour les titres est <a href="https://github.com/sebsan/Bagnard">Bagnard</a>, distribuée sous licence <a href="https://openfontlicense.org/">SIL Open Font License v1.1</a> et réalisée par Sebastien Sanfilippo (Love Letters).</p>
+<p>La page <a href="http://rochdelannay.net/pages/publications.html">Publications &amp; Communications</a> est construite avec deux librairies JavaScript :</p>
+<ul>
+<li><a href="https://www.w2ui.com/web/home">W2UI</a> pour générer la grille de données dans la page des publications</li>
+<li><a href="https://leafletjs.com/">Leaflet</a> pour générer la carte interactive à partir d’une carte issue d’<a href="https://www.openstreetmap.org/">OpenStreetMap</a> de la page des communications</li>
+</ul>
+<p>Les données sont directement récupérées et triées depuis l’<a href="https://api.zotero.org/groups/5813957/items">API Zotero</a>.</p>
+<p>Je remercie Louis-Olivier Brassard et Marcello Vitali-Rosati pour la réalisation du code de cette page puisque, initialement, il s’agit du code que nous avions développé pour le projet Alfred DesRochers en 2022/2023 (projet porté par Stéphanie Bernier à l’UdeM).</p>
 <p><strong>Remerciements</strong></p>
 <p>J’aimerais remercier tout particulièrement <a href="https://www.lobrassard.net/">Louis-Olivier Brassard</a>, pour toutes les explications sur le fonctionnement de Make et pour les bouts de code que je t’ai emprunté. Merci également à <a href="https://www.arthurperret.fr/">Arthur Perret</a> pour ton idée de combiner Make et Pandoc (d’ailleurs ce générateur de carnet est un <em>fork</em> de ton projet).</p>
 <p>Pour toutes les idées partagées, je remercie également les personnes suivantes :</p>
