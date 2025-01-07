@@ -10,6 +10,9 @@ POSTS_DOCS := $(patsubst %.md, docs/posts/%.html, $(notdir $(POSTS)))
 PAGES := $(sort $(shell find src/pages -type f -iname '*.md'))
 PAGES_DOCS := $(patsubst %.md, docs/pages/%.html, $(notdir $(PAGES)))
 
+# Exclusion du fichier publication.html
+HTML_FILES := $(filter-out docs/pages/publications.html, $(wildcard docs/pages/*.html))
+
 # Copy static files recursively :
 # (Adapted from https://stackoverflow.com/questions/41993726/)
 STATIC := $(shell find static -type f)
@@ -47,7 +50,7 @@ serve:
 
 # Pandoc conversions
 # HTML
-html: $(STATIC_DOCS) docs/index.html $(POSTS_DOCS) $(PAGES_DOCS)
+html: $(STATIC_DOCS) docs/index.html $(POSTS_DOCS) $(PAGES_DOCS) docs/pages/publications.html
 
 docs/index.html: src/index.md templates/index.html $(metadata_site)
 	@ echo "Production de l'index."
@@ -65,6 +68,16 @@ docs/pages/%.html: src/pages/%.md $(metadata_site) templates/page.html
   	$< \
 		$(PANDOCFLAGS) \
 		--template templates/page.html \
+		--output $@
+	@ echo "La page \"$@\" est construite."
+
+docs/pages/publications.html: src/pages/publications.md $(metadata_site) templates/page-publications.html
+	@ mkdir -p "$(@D)"
+	@ echo "Production de la page \"$@\"..."
+	@ pandoc \
+  	$< \
+		$(PANDOCFLAGS) \
+		--template templates/page-publications.html \
 		--output $@
 	@ echo "La page \"$@\" est construite."
 	

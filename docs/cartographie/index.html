@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf8">
+        <title>Communications</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="global.css" />
+
+        <!-- W2UI -->
+        <link rel="stylesheet" type="text/css" href="/js/w2ui/w2ui.min.css" />
+        <script type="module" src="/js/w2ui/w2ui.es6.min.js"></script>
+
+        <!-- Leaflet -->
+        <link rel="stylesheet" type="text/css" href="/js/leaflet/leaflet.css"/>
+        <script src="/js/leaflet/leaflet.js"></script>
+    </head>
+    <body>
+        <div class="app">
+          <aside class="app-sidebar">
+            <div class="app-title">
+              <h1>Communications</h1>
+              <button id="backToIndexBtn">retour</button>
+            </div>
+
+            <ul class="liste-entrees"></ul>
+          </aside>
+
+          <main class="app-main">
+            <div id="map"></div>
+          </main>
+        </div>
+
+        <!-- Carte -->
+        <script type="module" src="/js/cartographie.js"></script>
+        <script>
+          // Gestion du clic sur le bouton "Retour à l'index"
+          document.getElementById('backToIndexBtn').addEventListener('click', () => {
+            // Redirection vers l'index
+            window.location.href = '/pages/publications.html';  // Remplacez '/' par le chemin approprié de votre page d'index
+          });
+        </script>
+    </body>
+</html>

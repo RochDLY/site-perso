@@ -1,0 +1,156 @@
+:root {
+  --sidebar-padding: .75rem;
+  --sidebar-width: 400px;
+  --sidebar-font-size: .875rem;
+
+  --highlight-color: #1a1818;
+  --highlight-text-color: #ffffff;
+
+  --light-color: #1a1818;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  font-family: -apple-system, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-height: normal;
+  font-size: 100%; /* 16px by default */
+}
+
+.app {
+  display: grid;
+  grid-template-rows: [app-main] 1fr [app-sidebar] 45vh;
+  grid-template-columns: auto;
+
+  grid-template-areas:
+    "app-main"
+    "app-sidebar"
+  ;
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+}
+.app-sidebar {
+  grid-area: app-sidebar;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+  position: relative;
+  z-index: 1;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-margin: 1rem;
+  font-size: var(--sidebar-font-size);
+}
+.app-title {
+  display: flex;
+  justify-content: space-between;  /* Cela permet de séparer le titre et le bouton */
+  align-items: center;  /* Centrer verticalement */
+  padding: 4rem var(--sidebar-padding) 1.5rem;
+  margin: 0;
+  background-color: var(--light-color);
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+@media (min-width: 48rem) {
+  .app {
+    grid-template-areas: "app-sidebar app-main";
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .app-sidebar {
+    padding-bottom: 90vh;
+  }
+  .app-main {
+  }
+}
+
+.liste-entrees {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  font-size: .875rem;
+}
+
+.entree {
+  padding: var(--sidebar-padding);
+  border-bottom: 1px solid #ccc;
+  transition: all .25s ease-out;
+  scroll-margin-top: 1rem;
+}
+.entree:first-child {
+  border-top: 1px solid #ccc;
+}
+.entree:target {
+  background-color: var(--highlight-color);
+  color: var(--highlight-text-color);
+  padding: calc(var(--sidebar-padding) * 2) var(--sidebar-padding);
+}
+.entree:target .entree-contenu {
+  max-height: none;
+  animation: .25s scaleIn;
+  padding: .5rem 0;
+}
+.entree-contenu {
+  max-height: 0;
+  overflow: hidden;
+}
+.entree[onclick] {
+  cursor: pointer;
+}
+
+.entree-titre {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.entree-warning {
+  margin-top: 1.5rem;
+  font-size: var(--sidebar-font-size);
+}
+
+#backToIndexBtn {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#backToIndexBtn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Rendre le bouton plus petit sur mobile */
+@media (max-width: 48rem) {
+  .app-title {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #backToIndexBtn {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+  }
+}
+
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 200px; /* cas extrême*/
+}
+
+@keyframes scaleIn {
+  from { transform: scaleY(.8); }
+  to   { transform: scaleY(1); }
+}
