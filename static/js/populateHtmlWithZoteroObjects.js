@@ -107,7 +107,7 @@ function displayItems(items) {
             //lname: lastName,
             creators: item.creators 
                 ? item.creators
-                    //.filter(creator => creator.creatorType === "author")  // Filtrer uniquement les auteurs
+                    .filter(creator => creator.creatorType === "author")  // Filtrer uniquement les auteurs
                     .map(creator => `${creator.firstName} ${creator.lastName}`)  // Créer une chaîne avec le prénom et le nom
                     .join(', ')  // Joindre les noms avec une virgule
                 : 'Auteur inconnu',
