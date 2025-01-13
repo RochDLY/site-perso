@@ -22,6 +22,6 @@ second-title: "Biographie"
 ## Autres sites web {.smaller-title}
 
 - [Carnet de doctorat](https://carnet.en-cours-de.construction/)
-- [Idendités numériques]() (2024-2025)
-- [Idendités numériques](https://identites-numeriques.en-cours-de.construction/) (2023-2024)
+- [Identités numériques](https://identites-numeriques-2025.en-cours-de.construction/) (2024-2025)
+- [Identités numériques](https://identites-numeriques.en-cours-de.construction/) (2023-2024)
 - [HNU2000](https://hnu2000.en-cours-de.construction/) (2023-2024)
