@@ -1,9 +1,17 @@
 <footer>
-    <div>
+    <div class="rights">
         ${if(rights)}
         <p>${rights-short} ${author-meta}</p>
         ${endif}
+    </div>
+    <div>
         <p>Créé avec Pandoc et Make</p>
-        <a href="/pages/colophon.html">Colophon</a>
+        <p><a href="/pages/colophon.html">Colophon</a></p>
+    </div>
+    <div class="icons">
+        <a href="${orcid}"><i class="fa fa-orcid" aria-hidden="true"></i></a>
+        <a href="${idhal}"><i class="fa fa-hal" aria-hidden="true"></i></a>
+        <a href="${github}"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://hcommons.social/@roch_dly"><i class="fa fa-mastodon" aria-hidden="true"></i></a>
     </div>
 </footer>

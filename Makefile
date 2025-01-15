@@ -28,10 +28,10 @@ PANDOCFLAGS = \
 	--from markdown \
 	--to html \
 	--standalone \
-	--citeproc \
 	--wrap none \
-	--bibliography $(references) \
 	--metadata-file $(metadata_site) \
+	--citeproc \
+	--bibliography $(references) \
 	--csl $(csl_file)
 
 
@@ -136,4 +136,13 @@ pages-partials = \
 	templates/partials/nav.html
 
 templates/page.html: $(pages-partials)
+	@ touch $@
+
+page-publications-partials = \
+	templates/partials/footer.html \
+	templates/partials/head.html \
+	templates/partials/header.html \
+	templates/partials/nav.html
+
+templates/page-publications.html: $(page-publications-partials)
 	@ touch $@

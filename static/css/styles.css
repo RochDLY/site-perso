@@ -46,13 +46,45 @@ em {
     font-family: 'TeX Gyre Heros Italic';
 }
 
-footer {
+/* footer {
     text-align: center;
     background-color: #ffffff;
     border: 3px solid #1a1818;
     grid-column: 1 / 5;
     grid-row: 3;
+} */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 3px solid #1a1818;
+    padding: 15px 20px;
+    grid-column: 1 / 5;
+    grid-row: 3;
 }
+
+footer div {
+    flex: 1;
+}
+
+footer div p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+footer .icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+footer .rights {
+    display: flex;
+    justify-content: flex-start;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bagnard';
