@@ -16,6 +16,15 @@ ${if(date)}
 <meta name="dcterms.date" content="${date-meta}" />
 ${endif}
 
+<!-- Les meta de Open Graph Protocole : https://ogp.me/ -->
+<meta property="og:site_name" content="${site-title}" />
+<meta property="og:title"     content="${site-title} | ${if(pagetitle)}${pagetitle}${endif}" />
+<meta property="og:description" content="${description-meta}" />
+<meta property="og:image"     content="" />
+<meta property="og:url"       content="${baseurl}" />
+<meta property="og:type"      content="website" />
+<meta property="og:locale"    content="${lang}" />
+
 <meta name="generator" content="Pandoc, GNU make" />
 <!-- pandoc - https://pandoc.org/ -->
 <!-- gnu make - https://www.gnu.org/software/make/ -->

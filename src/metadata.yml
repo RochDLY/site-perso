@@ -7,7 +7,9 @@ site-subtitle: ""
 
 description: "Site web personnel de Roch Delannay"
 
-lang: "fr"
+lang: "fr-FR"
+
+baseurl: "rochdelannay.net"
 
 author: "Roch Delannay"
 
