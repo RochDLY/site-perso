@@ -14,6 +14,7 @@ title: Enseignements
 
 - Cours magistral mutualisé destiné aux étudiants en licence en sciences de
 l'information et de la communication, sciences du langage et littératures - [Identités numériques](https://identites-numeriques-2025.en-cours-de.construction), dispensé à l'hiver (24h CM).
+- Encadrement d'étudiants durant le Module d'innovation pédagogique "Explorations numériques des archives de l'INA", un intensif d'une semaine organisé par Antonin Segault et Marta Severo à destination des étudiants de Master 2 en sciences de l'information et de la communication.
 
 **Université Montpellier 3 Paul Valéry | 2023-2024**
 
