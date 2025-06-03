@@ -12,7 +12,7 @@ second-title: "Biographie"
 - [Centre de recherche interuniversitaire sur les humanités numériques](https://www.crihn.org/)
 
 
-## Projets de recherche {.smaller-title}
+## Contribution aux projets de recherche {.smaller-title}
 
 - [Revue 3.0](https://revue30.org/) (2024 - aujourd'hui)
 - [Stylo, un éditeur de texte sémantique](https://github.com/EcrituresNumeriques/stylo) (2022 - aujourd'hui)
