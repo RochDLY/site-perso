@@ -17,7 +17,6 @@ ${endif} -->
 ${if(date)}
                     <time>${date}</time>
 ${endif}
-                    <button id="btncartographie">Communications</button>
                 </header>
 ${endif}
 
@@ -29,12 +28,12 @@ ${endif}
 ${partials/footer.html()}
 
         <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
-        <script>
+<!--         <script>
             // Gestion du clic sur le bouton "Retour à l'index"
             document.getElementById('btncartographie').addEventListener('click', () => {
               // Redirection vers l'index
               window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
             });
-          </script>
+          </script> -->
     </body>
 </html>

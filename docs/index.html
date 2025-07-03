@@ -31,7 +31,8 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="/">Accueil</a></li>
-                    <li><a href="/pages/publications.html">Publications & Communications</a></li>
+                    <li><a href="/pages/publications.html">Publications</a></li>
+                    <li><a id="btncartographie">Communications</a></li>
                     <li><a href="/pages/cours.html">Enseignements</a></li>
             <!--         <li><a href="/pages/presentations.html">Présentations</a></li> -->
                 </ul>
@@ -89,5 +90,13 @@
                             <a href="https://github.com/RochDLY"><i class="fa fa-github" aria-hidden="true"></i></a>
                             <a href="https://hcommons.social/@roch_dly"><i class="fa fa-mastodon" aria-hidden="true"></i></a>
                         </div>
-                    </footer>    </body>
+                    </footer>
+                    <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
+                    <script>
+                        // Gestion du clic sur le bouton "Retour à l'index"
+                        document.getElementById('btncartographie').addEventListener('click', () => {
+                            // Redirection vers l'index
+                            window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
+                        });
+                    </script>    </body>
 </html>
