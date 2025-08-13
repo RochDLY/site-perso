@@ -1,0 +1,63 @@
+#mainLayout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+#sidebar {
+  width: 15%;
+  min-width: 150px;
+  border-right: 1px solid #ccc;
+}
+
+#gridSection {
+  width: 50%;
+  overflow-x: auto;
+}
+
+#detailsSection {
+  width: 35%;
+}
+
+#publicationTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#publicationTable th, #publicationTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#publicationTable tbody tr {
+  cursor: default;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#publicationTable tbody tr:hover {
+  background-color: #1a1818;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+#tagList {
+  list-style: none;
+  padding: 0;
+}
+
+#tagList li {
+  cursor: default;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#tagList li:hover {
+    background-color: #1a1818;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+

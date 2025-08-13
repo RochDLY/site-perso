@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="${lang}" xml:lang="${lang}">
-    <head>
-        ${partials/head.html()}
-        <link rel="stylesheet" type="text/css" href="/js/w2ui/w2ui.min.css" />
-        <script type="module" src="/js/w2ui/w2ui.es6.min.js"></script>
-    </head>
-    <body>
-        ${partials/header.html()}
-            <div class="container-publications">
-${if(title)}
-                <header class="header-bloc">
-                    <h1>${title}</h1>
-<!-- ${if(subtitle)}
-                    <h2>${subtitle}</h2>
-${endif} -->
-${if(date)}
-                    <time>${date}</time>
-${endif}
-                </header>
-${endif}
+  <head>
+    ${partials/head.html()}
+    <link rel="stylesheet" type="text/css" href="/css/publications.css" />
+  </head>
+  <body>
+    ${partials/header.html()}
 
-                <div class="content-publications">
-                    <div id="main"></div>
-                </div>
+    <div class="container-publications">
+      ${if(title)}
+      <header class="header-bloc">
+        <h1>${title}</h1>
+        ${if(subtitle)}
+        <h2>${subtitle}</h2>
+        ${endif}
+        ${if(date)}
+        <time>${date}</time>
+        ${endif}
+      </header>
+      ${endif}
 
+      <div class="content-publications">
+        <div id="mainLayout">
+          <aside id="sidebar">
+            <h3>Tags</h3>
+            <ul id="tagList"></ul>
+          </aside>
+
+          <section id="gridSection">
+            <h3>Liste des publications</h3>
+            <table id="publicationTable">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Titre</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+
+          <section id="detailsSection">
+            <h3>Détails</h3>
+            <div id="itemDetails"></div>
+          </section>
         </div>
-${partials/footer.html()}
+      </div>
+    </div>
 
-        <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
-<!--         <script>
-            // Gestion du clic sur le bouton "Retour à l'index"
-            document.getElementById('btncartographie').addEventListener('click', () => {
-              // Redirection vers l'index
-              window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
-            });
-          </script> -->
-    </body>
+    ${partials/footer.html()}
+
+    <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
+  </body>
 </html>

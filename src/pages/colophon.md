@@ -17,7 +17,6 @@ La police pour les titres est [Bagnard](https://github.com/sebsan/Bagnard), dist
 
 La page [Publications & Communications](http://rochdelannay.net/pages/publications.html) est construite avec deux librairies JavaScript : 
 
-- [W2UI](https://www.w2ui.com/web/home) pour générer la grille de données dans la page des publications
 - [Leaflet](https://leafletjs.com/) pour générer la carte interactive à partir d'une carte issue d'[OpenStreetMap](https://www.openstreetmap.org/) de la page des communications
 
 

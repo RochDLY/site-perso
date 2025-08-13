@@ -222,6 +222,7 @@ strong > em {
     text-align: center;
     padding: 14px 20px; 
     text-decoration: none; 
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .navbar li.right {
@@ -259,6 +260,7 @@ footer a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .posts-list a:hover, .posts-list a:active,

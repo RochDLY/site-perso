@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr-FR" xml:lang="fr-FR">
-    <head>
-        <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8"/>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-        <title>Roch Delannay | Publications</title>
+    <title>Roch Delannay | Publications</title>
 
-        <meta name="author" content="Roch Delannay" />
+    <meta name="author" content="Roch Delannay" />
 
-        <meta name="description" content="Site web personnel de Roch Delannay" />
+    <meta name="description" content="Site web personnel de Roch Delannay" />
 
 
-        <!-- Les meta de Open Graph Protocole : https://ogp.me/ -->
-        <meta property="og:site_name" content="Roch Delannay" />
-        <meta property="og:title"     content="Roch Delannay | Publications" />
-        <meta property="og:description" content="Site web personnel de Roch Delannay" />
-        <meta property="og:image"     content="" />
-        <meta property="og:url"       content="rochdelannay.net" />
-        <meta property="og:type"      content="website" />
-        <meta property="og:locale"    content="fr-FR" />
+    <!-- Les meta de Open Graph Protocole : https://ogp.me/ -->
+    <meta property="og:site_name" content="Roch Delannay" />
+    <meta property="og:title"     content="Roch Delannay | Publications" />
+    <meta property="og:description" content="Site web personnel de Roch Delannay" />
+    <meta property="og:image"     content="" />
+    <meta property="og:url"       content="rochdelannay.net" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:locale"    content="fr-FR" />
 
-        <meta name="generator" content="Pandoc, GNU make" />
-        <!-- pandoc - https://pandoc.org/ -->
-        <!-- gnu make - https://www.gnu.org/software/make/ -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/styles.css" />        <link rel="stylesheet" type="text/css" href="/js/w2ui/w2ui.min.css" />
-        <script type="module" src="/js/w2ui/w2ui.es6.min.js"></script>
-    </head>
-    <body>
-        <header class="main-header">
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/pages/publications.html">Publications</a></li>
-                    <li><a id="btncartographie">Communications</a></li>
-                    <li><a href="/pages/cours.html">Enseignements</a></li>
-            <!--         <li><a href="/pages/presentations.html">Présentations</a></li> -->
-                </ul>
-            </nav></header>            <div class="container-publications">
-                <header class="header-bloc">
-                    <h1>Publications</h1>
-<!--  -->
-                </header>
+    <meta name="generator" content="Pandoc, GNU make" />
+    <!-- pandoc - https://pandoc.org/ -->
+    <!-- gnu make - https://www.gnu.org/software/make/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css" />    <link rel="stylesheet" type="text/css" href="/css/publications.css" />
+  </head>
+  <body>
+    <header class="main-header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/pages/publications.html">Publications</a></li>
+                <li><a id="btncartographie">Communications</a></li>
+                <li><a href="/pages/cours.html">Enseignements</a></li>
+        <!--         <li><a href="/pages/presentations.html">Présentations</a></li> -->
+            </ul>
+        </nav></header>
+    <div class="container-publications">
+            <header class="header-bloc">
+        <h1>Publications</h1>
+                      </header>
+      
+      <div class="content-publications">
+        <div id="mainLayout">
+          <aside id="sidebar">
+            <h3>Tags</h3>
+            <ul id="tagList"></ul>
+          </aside>
 
-                <div class="content-publications">
-                    <div id="main"></div>
-                </div>
+          <section id="gridSection">
+            <h3>Liste des publications</h3>
+            <table id="publicationTable">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Titre</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
 
+          <section id="detailsSection">
+            <h3>Détails</h3>
+            <div id="itemDetails"></div>
+          </section>
         </div>
-<footer>
-    <div class="rights">
-                <p>CC BY 4.0 Roch Delannay</p>
-            </div>
-    <div>
-        <p>Créé avec Pandoc et Make</p>
-        <p><a href="/pages/colophon.html">Colophon</a></p>
+      </div>
     </div>
-    <div class="icons">
-        <a href="https://orcid.org/0000-0002-3519-4365"><i class="fa fa-orcid" aria-hidden="true"></i></a>
-        <a href="https://cv.hal.science/roch-delannay"><i class="fa fa-hal" aria-hidden="true"></i></a>
-        <a href="https://github.com/RochDLY"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a href="https://hcommons.social/@roch_dly"><i class="fa fa-mastodon" aria-hidden="true"></i></a>
-    </div>
-</footer>
-<script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
-<script>
-    // Gestion du clic sur le bouton "Retour à l'index"
-    document.getElementById('btncartographie').addEventListener('click', () => {
-        // Redirection vers l'index
-        window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
-    });
-</script>
-        <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
-<!--         <script>
-            // Gestion du clic sur le bouton "Retour à l'index"
-            document.getElementById('btncartographie').addEventListener('click', () => {
-              // Redirection vers l'index
-              window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
-            });
-          </script> -->
-    </body>
+
+    <footer>
+        <div class="rights">
+                    <p>CC BY 4.0 Roch Delannay</p>
+                </div>
+        <div>
+            <p>Créé avec Pandoc et Make</p>
+            <p><a href="/pages/colophon.html">Colophon</a></p>
+        </div>
+        <div class="icons">
+            <a href="https://orcid.org/0000-0002-3519-4365"><i class="fa fa-orcid" aria-hidden="true"></i></a>
+            <a href="https://cv.hal.science/roch-delannay"><i class="fa fa-hal" aria-hidden="true"></i></a>
+            <a href="https://github.com/RochDLY"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://hcommons.social/@roch_dly"><i class="fa fa-mastodon" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+    <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
+    <script>
+        // Gestion du clic sur le bouton "Retour à l'index"
+        document.getElementById('btncartographie').addEventListener('click', () => {
+            // Redirection vers l'index
+            window.location.href = '/cartographie/index.html';  // Remplacez '/' par le chemin approprié de votre page d'index
+        });
+    </script>
+    <script type="module" src="/js/populateHtmlWithZoteroObjects.js"></script>
+  </body>
 </html>
