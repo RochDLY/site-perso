@@ -15,7 +15,7 @@ C'est un site dit « statique ». Il ne requiert que des fichiers au format 
 La composition des corps de texte est réalisée avec [Tex Gyre Heros](https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros), distribuée par GUST sous licence GPL (GUST Font License), une licence libre équivalente à LPPL (LaTeX Project Public License).
 La police pour les titres est [Bagnard](https://github.com/sebsan/Bagnard), distribuée sous licence [SIL Open Font License v1.1](https://openfontlicense.org/) et réalisée par Sebastien Sanfilippo (Love Letters).
 
-La page [Publications & Communications](http://rochdelannay.net/pages/publications.html) est construite avec deux librairies JavaScript : 
+Les pages [Publications](http://rochdelannay.net/pages/publications.html) et [Communications](http://rochdelannay.net/cartographie/index.html) sont construites avec une librairie JavaScript : 
 
 - [Leaflet](https://leafletjs.com/) pour générer la carte interactive à partir d'une carte issue d'[OpenStreetMap](https://www.openstreetmap.org/) de la page des communications
 
