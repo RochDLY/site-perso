@@ -1,8 +1,60 @@
-import { getTagsList, checkForUpdatesItemsAndTags, getItemsWithCache } from "./getZoteroObjects.js";
+import {
+  getTagsList,
+  checkForUpdatesItemsAndTags,
+  getItemsWithCache
+} from "./getZoteroObjects.js";
 
 let itemsFiltered = [];
 let filteredCache = {};
 
+// 🔹 Affiche les publications dans le tableau
+function displayItems(items) {
+  const tbody = document.querySelector('#publicationTable tbody');
+  tbody.innerHTML = '';
+
+  items.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${item.type}</td>
+      <td>${item.title}</td>
+      <td>${item.date}</td>
+    `;
+    tr.onclick = () => showItemDetails(item);
+    tbody.appendChild(tr);
+  });
+}
+
+// 🔹 Transforme les tags d’un item en HTML interactif
+function displayItemTags(tags) {
+  if (!Array.isArray(tags)) return '<em>Aucun tag</em>';
+
+  return tags
+    .filter(t => t.tag && !t.tag.startsWith('_') && !t.tag.startsWith('#'))
+    .map(t => `<span class="tag clickable" data-tag="${t.tag}">${t.tag}</span>`)
+    .join(' ');
+}
+
+// 🔹 Affiche les détails d’un item sélectionné
+function showItemDetails(item) {
+  const detailsContainer = document.getElementById('itemDetails');
+  const tagsHTML = displayItemTags(item.tags);
+
+  detailsContainer.innerHTML = `
+    <h2>${item.title}</h2>
+    <p><strong>Type:</strong> ${item.type}</p>
+    <p><strong>Auteur(s):</strong> ${item.creators}</p>
+    <p><strong>Date:</strong> ${item.date}</p>
+    <p><strong>Résumé:</strong> ${item.abstract}</p>
+    <p><strong>Tags:</strong> ${tagsHTML}</p>
+  `;
+
+  // 🔸 Ajoute le filtrage par clic sur les tags
+  detailsContainer.querySelectorAll('.tag.clickable').forEach(tagEl => {
+    tagEl.onclick = () => filterItemsByTag(tagEl.dataset.tag);
+  });
+}
+
+// 🔹 Affiche la liste des tags globaux avec comptage
 function displayTagsInHTML(tags) {
   const tagCounts = {};
 
@@ -31,49 +83,24 @@ function displayTagsInHTML(tags) {
   });
 }
 
-function displayItems(items) {
-  const tbody = document.querySelector('#publicationTable tbody');
-  tbody.innerHTML = '';
-
-  items.forEach((item, index) => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${item.type}</td>
-      <td>${item.title}</td>
-      <td>${item.date}</td>
-    `;
-    tr.onclick = () => showItemDetails(item);
-    tbody.appendChild(tr);
-  });
-}
-
-function showItemDetails(item) {
-  const detailsDiv = document.getElementById('itemDetails');
-  detailsDiv.innerHTML = `
-    <h3>${item.title}</h3>
-    <p><strong>Date:</strong> ${item.date}</p>
-    <p><strong>Auteur(s):</strong> ${item.creators}</p>
-    <p><strong>Résumé:</strong> ${item.abstract}</p>
-    <p><strong>Tags:</strong> ${item.tags}</p>
-  `;
-}
-
+// 🔹 Filtre les publications par tag
 function filterItemsByTag(tag) {
   if (filteredCache[tag]) {
     displayItems(filteredCache[tag]);
     return;
   }
 
-  let filteredItems = tag === 'All'
+  const filtered = tag === 'All'
     ? itemsFiltered
     : itemsFiltered.filter(item =>
         item.tags?.some(t => t.tag === tag)
       );
 
-  filteredCache[tag] = filteredItems;
-  displayItems(filteredItems);
+  filteredCache[tag] = filtered;
+  displayItems(filtered);
 }
 
+// 🔹 Récupère et formate les publications Zotero
 async function getFilteredItems() {
   await checkForUpdatesItemsAndTags();
   const items = await getItemsWithCache();
@@ -98,30 +125,25 @@ async function getFilteredItems() {
       date: item.data.date || "Date non spécifiée",
       abstract: item.data.abstractNote || "Aucun abstract disponible",
       tags: item.data.tags,
-      type: item.data.itemType
+      type: item.data.itemType,
+      description: item.data.extra || ""
     }));
 }
 
-async function updateItems() {
-  try {
-    await checkForUpdatesItemsAndTags();
-    itemsFiltered = await getFilteredItems();
-    filterItemsByTag('All');
-  } catch (error) {
-    console.error("Erreur lors de la mise à jour des items:", error);
-  }
-}
-
+// 🔹 Initialise l’application
 async function init() {
   try {
-    await updateItems();
+    itemsFiltered = await getFilteredItems();
     const tagList = await getTagsList();
+
     displayTagsInHTML(tagList);
     filterItemsByTag('All');
 
     setInterval(async () => {
       console.log("Vérification des mises à jour...");
-      await updateItems();
+      itemsFiltered = await getFilteredItems();
+      filteredCache = {};
+      filterItemsByTag('All');
     }, 300000);
   } catch (error) {
     console.error("Erreur lors de l'initialisation:", error);
