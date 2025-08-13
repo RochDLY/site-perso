@@ -30,7 +30,7 @@ function displayItemTags(tags) {
 
   return tags
     .filter(t => t.tag && !t.tag.startsWith('_') && !t.tag.startsWith('#'))
-    .map(t => `<span class="tag clickable" data-tag="${t.tag}">${t.tag}</span>`)
+    .map(t => `<span class=\"tag clickable\" data-tag=\"${t.tag}\">${t.tag}</span>`)
     .join(' ');
 }
 
