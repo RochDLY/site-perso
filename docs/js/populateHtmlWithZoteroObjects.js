@@ -42,7 +42,8 @@ function showItemDetails(item) {
   detailsContainer.innerHTML = `
     <h2>${item.title}</h2>
     <p><strong>Type:</strong> ${item.type}</p>
-    <p><strong>Auteur(s):</strong> ${item.creators}</p>
+    <p><strong>Auteur(s):</strong> ${item.authors}</p>
+    <p><strong>Contributeur(s):</strong> ${item.creators}</p>
     <p><strong>Date:</strong> ${item.date}</p>
     <p><strong>Résumé:</strong> ${item.abstract}</p>
     <p><strong>Tags:</strong> ${tagsHTML}</p>
@@ -116,12 +117,18 @@ async function getFilteredItems() {
     .filter(item => allowedItemTypes.includes(item.data.itemType))
     .map(item => ({
       title: item.data.title || "Titre non spécifié",
-      creators: item.data.creators
+      authors: item.data.creators
         ? item.data.creators
             .filter(c => c.creatorType === "author")
             .map(c => `${c.firstName} ${c.lastName}`)
             .join(', ')
         : "Auteur inconnu",
+      creators: item.data.creators
+        ? item.data.creators
+            .filter(c => c.creatorType === "contributor")
+            .map(c => `${c.firstName} ${c.lastName}`)
+            .join(', ')
+        : "Contributeur inconnu",
       date: item.data.date || "Date non spécifiée",
       abstract: item.data.abstractNote || "Aucun abstract disponible",
       tags: item.data.tags,
