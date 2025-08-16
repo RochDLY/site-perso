@@ -30,47 +30,51 @@
   <body>
     <header class="main-header">
         <nav class="navbar">
-            <ul>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/pages/publications.html">Publications</a></li>
                 <li><a id="btncartographie">Communications</a></li>
                 <li><a href="/pages/cours.html">Enseignements</a></li>
-        <!--         <li><a href="/pages/presentations.html">Présentations</a></li> -->
-            </ul>
+          </ul>
         </nav></header>
     <div class="container-publications">
-            <header class="header-bloc">
-        <h1>Publications</h1>
-                      </header>
-      
-      <div class="content-publications">
-        <div id="mainLayout">
-          <aside id="sidebar">
-            <h3>Tags</h3>
-            <ul id="tagList"></ul>
-          </aside>
+    <header class="header-bloc">
+    <h1>Publications</h1>
+          </header>
+  
+  <div class="content-publications">
+    <div id="mainLayout">
+      <aside id="sidebar">
+        <h3>Tags</h3>
+        <ul id="tagList"></ul>
+      </aside>
 
-          <section id="gridSection">
-            <h3>Liste des publications</h3>
-            <table id="publicationTable">
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Titre</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </section>
-
-          <section id="detailsSection">
-            <h3>Détails</h3>
-            <div id="itemDetails"></div>
-          </section>
+      <section id="gridSection">
+        <h3>Liste des publications</h3>
+        <div class="table-wrapper">
+          <table id="publicationTable">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Titre</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-      </div>
+      </section>
+
+      <section id="detailsSection">
+        <h3>Détails</h3>
+        <div id="itemDetails"></div>
+      </section>
     </div>
+  </div>
+</div>
+
 
     <footer>
         <div class="rights">

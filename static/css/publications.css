@@ -1,68 +1,28 @@
-.tag {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #1a1818;
-  border: 1px dotted black;
-  padding: 4px 8px;
-  margin: 2px;
-  font-size: 0.85em;
-}
-
-.tag.clickable {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.tag.clickable:hover {
-  background-color: #1a1818;
-  color: #ffffff;
-}
-
+/* ===============================
+   🧱 LAYOUT PRINCIPAL
+   =============================== */
 #mainLayout {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  flex-wrap: nowrap;
+  gap: var(--gap);
+  padding: var(--padding);
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
+/* ===============================
+   📚 SIDEBAR
+   =============================== */
 #sidebar {
   width: 15%;
   min-width: 150px;
-  border-right: 1px solid #ccc;
-}
-
-#gridSection {
-  width: 50%;
-  overflow-x: auto;
-}
-
-#detailsSection {
-  width: 35%;
-}
-
-#publicationTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#publicationTable th, #publicationTable td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#publicationTable tbody tr {
-  cursor: default;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#publicationTable tbody tr:hover {
-  background-color: #1a1818;
-  color: #ffffff;
-  cursor: pointer;
+  border-right: var(--border-main);
 }
 
 #tagList {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 #tagList li {
@@ -73,10 +33,168 @@
 }
 
 #tagList li:hover {
-    background-color: #1a1818;
-    color: #ffffff;
-    cursor: pointer;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  cursor: pointer;
 }
 
+/* ===============================
+   🏷️ TAGS
+   =============================== */
+.tag {
+  display: inline-block;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: var(--border-link);
+  padding: 4px 8px;
+  margin: 2px;
+  font-size: var(--font-size-small);
+}
 
+.tag.clickable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
+.tag.clickable:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+}
+
+/* ===============================
+   📊 TABLEAU DE PUBLICATIONS
+   =============================== */
+#gridSection {
+  width: 50%;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#publicationTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#publicationTable th,
+#publicationTable td {
+  border: var(--border-table);
+  padding: 8px;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+#publicationTable th:nth-child(2),
+#publicationTable td:nth-child(2) {
+  max-width: 200px;
+}
+
+#publicationTable tbody tr {
+  cursor: default;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#publicationTable tbody tr:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+/* ===============================
+   📄 SECTION DÉTAILS
+   =============================== */
+#detailsSection {
+  width: 35%;
+}
+
+/* ===============================
+   🧠 TITRES
+   =============================== */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-title);
+}
+
+/* ===============================
+   📱 RESPONSIVE
+   =============================== */
+@media (max-width: 1024px) {
+  #mainLayout {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  #sidebar,
+  #gridSection,
+  #detailsSection {
+    width: 100%;
+    border-right: none;
+    margin-bottom: 20px;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #publicationTable {
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+
+@media (max-width: 600px) {
+  .tag {
+    font-size: var(--font-size-smaller);
+    padding: 3px 6px;
+  }
+
+  #publicationTable th,
+  #publicationTable td {
+    padding: 6px;
+    font-size: 0.9em;
+  }
+
+  #tagList li {
+    font-size: 0.9em;
+    padding: 4px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3, h4 {
+    font-size: 1.1em;
+  }
+
+  h5, h6 {
+    font-size: 1em;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #publicationTable {
+    width: 100%;
+    table-layout: fixed;
+    display: block;
+  }
+}
