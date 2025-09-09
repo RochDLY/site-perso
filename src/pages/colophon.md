@@ -4,7 +4,7 @@ title: Colophon
 
 **Licence**
 
-Sauf mention contraire, les contenus publiés sur ce site sont réutilisables suivant les termes de la licence Creative Commons Attribution 4.0 International (CC BY), cf. [résumé](https://creativecommons.org/licenses/by/4.0/deed.fr) et [texte intégral](https://creativecommons.org/licenses/by/4.0/legalcode.fr).
+Sauf mention contraire, les contenus publiés sur ce site sont réutilisables suivant les termes de la licence Creative Commons 0 1.0 Universal (CC0 1.0 Universal), cf. [résumé](https://creativecommons.org/publicdomain/zero/1.0/deed.fr) et [texte intégral](https://creativecommons.org/publicdomain/zero/1.0/legalcode.fr).
 
 
 **Briques technologiques**
@@ -32,6 +32,7 @@ Merci également à [Arthur Perret](https://www.arthurperret.fr/) pour ton idée
 Pour toutes les idées partagées, je remercie également les personnes suivantes :
 
 - [Robert Alessi](http://www1.robertalessi.net:86/fr)
+- [Clarisse Barbot](https://clarissebarbot.net/)
 - [Emmanuel Château-Dutier](https://histart.umontreal.ca/repertoire-departement/professeur/in/in22423/sg/Emmanuel%20Ch%C3%A2teau-Dutier/)
 - [Antoine Fauchié](https://www.quaternum.net/)
 - [David Larlet](http://larlet.com/)
