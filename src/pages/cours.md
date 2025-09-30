@@ -2,6 +2,9 @@
 title: Enseignements
 ---
 
+**Université Paris Nanterre | ATER | 2025-2026**
+
+
 **URFIST | 2024-2025**
 
 - Semaine du numérique des URFIST - [Rédaction et édition savante avec l'éditeur de texte Stylo](https://urfistinfo.hypotheses.org/4604), mars 2025 (2h TD).
